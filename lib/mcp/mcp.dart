@@ -16,10 +16,10 @@ Future<StdioClient> initializeMcpServer(
   // 发送初始化消息
   try {
     final initResponse = await mcpClient.sendInitialize();
-    Logger.root.info('初始化响应: $initResponse');
+    Logger.root.info('Réponse d\'initialisation: $initResponse');
 
     final toolListResponse = await mcpClient.sendToolList();
-    Logger.root.info('工具列表响应: $toolListResponse');
+    Logger.root.info('Réponse de la liste des outils: $toolListResponse');
   } catch (e, stackTrace) {
     Logger.root.severe('初始化消息发送失败: $e\n堆栈跟踪:\n$stackTrace');
     rethrow;

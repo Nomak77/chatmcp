@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-// 消息角色枚举
+// Enumération des rôles de messages
 enum MessageRole {
   system,
   user,
@@ -12,7 +12,7 @@ enum MessageRole {
   String get value => name;
 }
 
-// 消息结构体
+// Structure des messages
 class ChatMessage {
   final MessageRole role;
   final String? content;

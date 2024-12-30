@@ -292,7 +292,7 @@ class _ChatPageState extends State<ChatPage> {
       // 错误处理
       setState(() {
         _messages.last = ChatMessage(
-          content: "抱歉，发生错误：${e.toString()}",
+          content: "Désolé, une erreur est survenue : ${e.toString()}",
           role: MessageRole.assistant,
         );
       });

@@ -10,7 +10,7 @@ import 'package:window_manager/window_manager.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 初始化 window_manager
+  // Initialisation de window_manager
   await windowManager.ensureInitialized();
 
   WindowOptions windowOptions = const WindowOptions(
@@ -20,7 +20,7 @@ void main() async {
     skipTaskbar: false,
   );
 
-  // 配置窗口选项
+  // Configuration des options de la fenêtre
   windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();
     await windowManager.focus();
@@ -42,7 +42,7 @@ void main() async {
       ),
     );
   } catch (e, stackTrace) {
-    Logger.root.severe('Main 错误: $e\n堆栈跟踪:\n$stackTrace');
+    Logger.root.severe('Erreur principale: $e\nTrace de la pile:\n$stackTrace');
   }
 }
 

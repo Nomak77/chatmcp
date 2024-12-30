@@ -31,7 +31,7 @@ class InputArea extends StatelessWidget {
                   onChanged: onTextChanged,
                   onSubmitted: onSubmitted,
                   decoration: const InputDecoration(
-                    hintText: '输入消息...',
+                    hintText: 'Entrez votre message...',
                     border: OutlineInputBorder(),
                   ),
                 ),

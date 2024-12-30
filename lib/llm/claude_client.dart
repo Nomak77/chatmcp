@@ -7,16 +7,16 @@ import 'package:ChatMcp/provider/provider_manager.dart';
 
 var models = [
   Model(
-    name: 'claude-3-opus-20240229',
-    label: 'Claude-3 Opus',
+    name: 'claude-3-sonnet-20240229',
+    label: 'Claude-3 Sonnet',
   ),
   Model(
-    name: 'claude-3-5-sonnet-latest',
-    label: 'Claude-3-5 Sonnet',
+    name: 'claude-3.5-sonnet-20240307',
+    label: 'Claude-3.5 Sonnet',
   ),
   Model(
-    name: 'claude-3-5-haiku-latest',
-    label: 'Claude-3-5 Haiku',
+    name: 'claude-3-haiku-20240307',
+    label: 'Claude-3 Haiku',
   ),
 ];
 
@@ -38,6 +38,8 @@ class ClaudeClient extends BaseLLMClient {
                 'Content-Type': 'application/json',
                 'x-api-key': apiKey,
                 'anthropic-version': '2023-06-01',
+                'accept': 'application/json',
+                'x-request-id': DateTime.now().millisecondsSinceEpoch.toString(),
               },
             ));
 
@@ -360,9 +362,9 @@ $conversationText""",
 
       return models;
     } catch (e, trace) {
-      Logger.root.severe('获取模型列表失败: $e, trace: $trace');
+      Logger.root.severe('Erreur lors de la récupération de la liste des modèles: $e, trace: $trace');
       // 返回预定义的模型列表作为后备
-      return [];
+      return models.map((m) => m.name).toList();
     }
   }
 }
