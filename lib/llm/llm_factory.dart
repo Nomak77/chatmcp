@@ -43,7 +43,7 @@ class LLMFactoryHelper {
   }
 
   static Future<List<String>> getAvailableModels() async {
-    List<String> providers = ["openai", "claude"];
+    List<String> providers = ["claude"];
     List<String> models = [];
     for (var provider in providers) {
       final apiKey =

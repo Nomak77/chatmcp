@@ -57,40 +57,9 @@ class _LlmSettingsState extends State<LlmSettings> {
         key: _formKey,
         child: ListView(
           children: [
+
             const Text(
-              'OpenAI API',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 16),
-            TextFormField(
-              controller: _openaiApiKeyController,
-              decoration: const InputDecoration(
-                labelText: 'API Key',
-                hintText: 'Please enter your OpenAI API Key',
-                border: OutlineInputBorder(),
-              ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your OpenAI API Key';
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: 16),
-            TextFormField(
-              controller: _openaiApiEndpointController,
-              decoration: const InputDecoration(
-                labelText: 'API Endpoint',
-                hintText: 'https://api.openai.com/v1',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 32),
-            const Text(
-              'Claude API',
+              'Configuration API Claude',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -100,13 +69,13 @@ class _LlmSettingsState extends State<LlmSettings> {
             TextFormField(
               controller: _claudeApiKeyController,
               decoration: const InputDecoration(
-                labelText: 'API Key',
-                hintText: 'Please enter your Claude API Key',
+                labelText: 'Clé API',
+                hintText: 'Entrez votre clé API Claude',
                 border: OutlineInputBorder(),
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter your Claude API Key';
+                  return 'Veuillez entrer votre clé API Claude';
                 }
                 return null;
               },
@@ -127,7 +96,7 @@ class _LlmSettingsState extends State<LlmSettings> {
                 onPressed: _saveSettings,
                 child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 12),
-                  child: Text('Save Settings'),
+                  child: Text('Sauvegarder'),
                 ),
               ),
             ),
